@@ -1,0 +1,14 @@
+[package]
+name = "babylon-bindings"
+version = "0.1.0"
+authors = ["Konrad Staniec <KonradStaniec@users.noreply.github.com>"]
+edition = "2021"
+description = "Bindings for CustomMsg and CustomQuery for the Babylon blockchain"
+repository = "https://github.com/babylonlabs-io/bindings"
+license = "Apache-2.0"
+
+[dependencies]
+cosmwasm-schema = "1.5.1"
+cosmwasm-std = "1.5.1"
+schemars = "0.8.12"
+serde = { version = "1.0.195", default-features = false, features = ["derive"] }

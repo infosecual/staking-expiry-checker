@@ -1,0 +1,25 @@
+[package]
+name = "babylon-example"
+version = "0.1.0"
+authors = ["Konrad Staniec <KonradStaniec@users.noreply.github.com>"]
+edition = "2021"
+description = "Smart contract to test Babylon custom cosmowasm api"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# for quicker tests, cargo test --lib
+# for more explicit tests, cargo test --features=backtraces
+backtraces = ["cosmwasm-std/backtraces"]
+
+[dependencies]
+cosmwasm-schema = "1.5.1"
+cosmwasm-std = { version = "1.5.1", features = ["iterator"] }
+cw-storage-plus   = "1.1.0"
+schemars = "0.8.16"
+babylon-bindings = { version = "0.1.0", path = "../../packages/bindings" }
+serde = { version = "1.0.195", default-features = false, features = ["derive"] }
+thiserror = "1.0.56"

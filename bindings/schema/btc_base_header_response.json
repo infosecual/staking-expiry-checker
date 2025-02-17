@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BtcBaseHeaderResponse",
+  "type": "object",
+  "required": [
+    "header_info"
+  ],
+  "properties": {
+    "header_info": {
+      "$ref": "#/definitions/BtcBlockHeaderInfo"
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "BtcBlockHeader": {
+      "type": "object",
+      "required": [
+        "bits",
+        "merkle_root",
+        "nonce",
+        "prev_blockhash",
+        "time",
+        "version"
+      ],
+      "properties": {
+        "bits": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "merkle_root": {
+          "type": "string"
+        },
+        "nonce": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "prev_blockhash": {
+          "type": "string"
+        },
+        "time": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "version": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "additionalProperties": false
+    },
+    "BtcBlockHeaderInfo": {
+      "type": "object",
+      "required": [
+        "header",
+        "height"
+      ],
+      "properties": {
+        "header": {
+          "$ref": "#/definitions/BtcBlockHeader"
+        },
+        "height": {
+          "type": "integer",
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

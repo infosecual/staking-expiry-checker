@@ -1,0 +1,37 @@
+db:
+  username: root
+  password: example
+  address: "mongodb://localhost:27019/?replicaSet=RS&directConnection=true"
+  db-name: babylon-staking-indexer
+btc:
+  rpchost: 127.0.0.1:38332 
+  rpcuser: rpcuser
+  rpcpass: rpcpass
+  prunednodemaxpeers: 0
+  blockpollinginterval: 30s
+  txpollinginterval: 10s
+  txpollingintervaljitter: 0.5
+  blockcachesize: 20971520
+  maxretrytimes: 5
+  retryinterval: 500ms
+  netparams: signet  
+bbn:
+  rpc-addr: https://rpc-dapp.devnet.babylonlabs.io:443
+  timeout: 30s
+  maxretrytimes: 5
+  retryinterval: 500ms
+poller:
+  param-polling-interval: 10s
+  expiry-checker-polling-interval: 10s
+  expired-delegations-limit: 100
+queue:
+  queue_user: user # can be replaced by values in .env file
+  queue_password: password
+  url: "localhost:5672"
+  processing_timeout: 5s # 5 second
+  msg_max_retry_attempts: 10
+  requeue_delay_time: 300s
+  queue_type: quorum
+metrics:
+  host: 0.0.0.0
+  port: 2112

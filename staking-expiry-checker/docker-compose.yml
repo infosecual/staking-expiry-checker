@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  staking-expiry-checker:
+    image: babylonlabs/staking-expiry-checker:latest
+    container_name: staking-expiry-checker
+    environment:
+      - CONFIG=/home/staking-expiry-checker/config.yml
+    depends_on:
+      - mongodb
+    volumes:
+      - ./config/config-docker.yml:/home/staking-expiry-checker/config.yml:Z
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./bin/init-mongo.sh:/init-mongo.sh
+    entrypoint: [ "/init-mongo.sh" ]

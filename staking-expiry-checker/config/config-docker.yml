@@ -1,0 +1,29 @@
+pollers:
+  log-level: debug
+  expiry-checker:
+    interval: 10s
+    timeout: 100s
+  btc-subscriber:
+    interval: 10s
+    timeout: 100s
+db:
+  username: root
+  password: example
+  address: "mongodb://localhost:27017"
+  db-name: staking-api-service
+  max-pagination-limit: 1000
+btc:
+  rpchost: 127.0.0.1:38332
+  rpcuser: rpcuser
+  rpcpass: rpcpass
+  prunednodemaxpeers: 0
+  blockpollinginterval: 30s
+  txpollinginterval: 10s
+  txpollingintervaljitter: 0.5
+  blockcachesize: 20971520
+  maxretrytimes: 5
+  retryinterval: 500ms
+  netparams: signet
+metrics:
+  host: 0.0.0.0
+  port: 2112
